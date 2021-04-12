@@ -33,8 +33,15 @@ def main():
     # reseting index
     data.reset_index(inplace=True, drop=True)
 
-    print(data.head(10))
+    # creating teryt column
+    data['teryt'] = data.apply(lambda x: str(x['woj']) + str(x['pow']), axis=1)
 
+    # getting rid of spaces
+    data['pow_name'] = data['pow_name'].apply(lambda x: str(x).replace(' ', ''))
+
+    print(data.head(10))
+    data_save_path = r'\data\interim\unemployment.xlsx'
+    data.to_excel(project_dir + data_save_path, index=False)
 
     # end time of program + duration
     end_time = time.time()
