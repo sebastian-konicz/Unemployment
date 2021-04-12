@@ -19,8 +19,7 @@ def main():
 
     # cleaning loaded data to dataframe format
     # droping unecessary rows
-    data.drop([data.index[0], data.index[1], data.index[2], data.index[3], data.index[4],
-               data.index[5], data.index[6], data.index[7], data.index[8], data.index[9]], inplace=True)
+    data.drop(data.index[[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]], inplace=True)
 
     # droping unecessary columnd
     data.drop(data.columns[[5, 6, 7, 8, 9, 10]], axis=1, inplace=True)
