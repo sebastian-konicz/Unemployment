@@ -34,6 +34,11 @@ def main():
     # transforming teryt column
     data['teryt'] = data['teryt'].apply(lambda x: '0' + str(x) if len(str(x)) < 4 else str(x))
 
+    # merging dataframes
+    map = map.merge(data, left_on='JPT_KOD_JE', right_on='teryt')
+
+    print(map.head(10))
+
     # simplifying geometry
     map.geometry = map.geometry.simplify(0.005)
 
@@ -62,10 +67,31 @@ def main():
                       fill_color='YlOrRd',
                       fill_opacity=0.7,
                       line_opacity=0.2,
-                      legend_name="Population density in Poland"
+                      legend_name="Stopa bezrobocia w procentach"
                                    ).add_to(map_graph)
 
-   
+    # choropleth.geojson.add_child(folium.features.GeoJsonTooltip(['pow_name'], labels=False))
+
+    # adding labels to map
+    style_function = lambda x: {'fillColor': '#ffffff',
+                                'color': '#000000',
+                                'fillOpacity': 0.1,
+                                'weight': 0.1}
+
+    tooltip = folium.features.GeoJson(
+        map_geo,
+        style_function=style_function,
+        control=False,
+        tooltip=folium.features.GeoJsonTooltip(
+            fields=['pow_name', 'unempl_%'],
+            aliases=['nazwa', 'stopa bezrobocia (%)'],
+            style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;")
+        )
+    )
+    map_graph.add_child(tooltip)
+    map_graph.keep_in_front(tooltip)
+    folium.LayerControl().add_to(map_graph)
+
     # saving map
     print('saving map')
     map_graph.save(project_dir + r'\data\final\density.html')

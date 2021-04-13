@@ -39,6 +39,8 @@ def main():
     # getting rid of spaces
     data['pow_name'] = data['pow_name'].apply(lambda x: str(x).replace(' ', ''))
 
+    data['pow_name'] = data['pow_name'].apply(lambda x: str(x).replace('m.', 'miasto ') if str(x).find('m.') != -1 else "powiat " + str(x))
+
     print(data.head(10))
     data_save_path = r'\data\interim\unemployment.xlsx'
     data.to_excel(project_dir + data_save_path, index=False)
