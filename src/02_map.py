@@ -94,7 +94,8 @@ def main():
 
     # saving map
     print('saving map')
-    map_graph.save(project_dir + r'\data\final\density.html')
+    map_graph.save(project_dir + r'\data\final\unemployment_map.html')
+    map_graph.save(project_dir + r'\templates\unemployment_map.html')
 
     # end time of program + duration
     end_time = time.time()
