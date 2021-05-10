@@ -19,30 +19,30 @@ Sebastian Konicz - sebastian.konicz@gmail.com
 
 ------------
 
-    ├── data							<- place whre the data is stored
+    ├── data                            <- place whre the data is stored
     │   │
-    │   ├── final							<- final maps created by script
+    │   ├── final                           <- final maps created by script
 	│   │
-    │   ├── geo								<- geospatial data
+    │   ├── geo                             <- geospatial data
     │   │
-    │   ├── interim							<- intermediate data that has been transformed.
+    │   ├── interim                         <- intermediate data that has been transformed.
     │   │
-    │   └── raw								<- the original, immutable data dump.
+    │   └── raw                             <- the original, immutable data dump.
     │
-    ├── src								<- source code for use in this project.
+    ├── src                             <- source code for use in this project.
     │   │
-    │   ├── 01_data_load.py					<- transforms oficial unemployment data to datafram
+    │   ├── 01_data_load.py                 <- transforms oficial unemployment data to datafram
     │   │
-    │   └── 02_map.py						<- crates map besed on unemplyment and geospacial data
+    │   └── 02_map.py                       <- crates map besed on unemplyment and geospacial data
 	│
-    ├── templates						<- folder with template sites for flask
+    ├── templates                       <- folder with template sites for flask
 	│
-    ├── app.py							<- app for running flask
+    ├── app.py                          <- app for running flask
 	│
-    ├── Procfile						<- file for flask
+    ├── Procfile                        <- file for flask
 	│
-    ├── README.md						<- the top-level README for developers using this project.
+    ├── README.md                       <- the top-level README for developers using this project.
 	│
-    └── requirements.txt				<- requirements for the project
+    └── requirements.txt                <- requirements for the project
 
 ------------
