@@ -1,36 +1,48 @@
-# Fantasy Fotball Ekstraklasa
-A small project scraping soccer data from site https://fantasy.ekstraklasa.org/stats. 
-The aim of this repository is to scrape data for further Machine Learning project.
+# Polish unemployment - municipality map 
+A small project which aim is to present on a interactive map polish unemployemnt rate (broken down by county)
+
+## Interctive map
+http://unemployment-map.herokuapp.com/
+
+## Data sources
+1. [The Central Statistical Office unemployment data for Feburary 2021](https://stat.gov.pl/obszary-tematyczne/rynek-pracy/bezrobocie-rejestrowane/bezrobotni-zarejestrowani-i-stopa-bezrobocia-stan-w-koncu-marca-2021-r-,2,104.html)
+2. [The Main Office of Geodesy and Cartography regional division of the country into counties (shapefile)](https://www.wroclaw.pl/open-data/dataset/przejazdy-wroclawskiego-roweru-miejskiego-archiwalne)
+
+## Inspiration articles:
+1.[Folium map tutorial](https://python-visualization.github.io/folium/installing.html)
+2.[Deployment of map on Heroku](https://towardsdatascience.com/your-cool-folium-maps-on-the-web-313f9d1a6bcd)
 
 ## Authors
 Sebastian Konicz - sebastian.konicz@gmail.com
 
-## Project Organization <a id="project"></a>
+## Project Organization
+
 ------------
 
-    ├── data              				<- Place whre the data is stored
+    ├── data              				<- place whre the data is stored
     │   │
-    │   ├── interim        					<- Intermediate data that has been transformed.
+    │   ├── final       					<- final maps created by script
+	│   │
+    │   ├── geo      						<- geospatial data
     │   │
-    │   ├── processed      					<- The final, canonical datasets for modeling.
+    │   ├── interim        					<- intermediate data that has been transformed.
     │   │
-    │   └── raw            					<- The original, immutable data dump.
+    │   └── raw            					<- the original, immutable data dump.
     │
-    ├── README.md					<- The top-level README for developers using this project.
-    │
-    ├── src                				<- Source code for use in this project.
+    ├── src                				<- source code for use in this project.
     │   │
-    │   ├── __init__.py        				<- Makes src a Python module
+    │   ├── 01_data_load.py     			<- transforms oficial unemployment data to datafram
     │   │
-    │   ├── Fantasy_01_scrap_players_sites       <- Script scrapping the adresses of the player stats site
-    │   │
-    │   ├──        				                 <- Script ...
-    │   │
-    │   ├──        			                     <- Script ..
-    │   │	
-    │   │
-    │   └──
-    │
-    └── 
+    │   └── 02_map.py 						<- crates map besed on unemplyment and geospacial data
+	│
+    ├── templates                		<- folder with template sites for flask
+	│
+    ├── app.py                			<- app for running flask
+	│
+    ├── Procfile                		<- file for flask
+	│
+    ├── README.md						<- the top-level README for developers using this project.
+	│
+    └── requirements.txt 				<- requirements for the project
 
 ------------
