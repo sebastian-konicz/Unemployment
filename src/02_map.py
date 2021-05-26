@@ -5,7 +5,6 @@ import geopandas as gpd
 import folium
 import time
 from folium import IFrame
-import altair as alt
 
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
@@ -26,7 +25,7 @@ def main():
     map['JPT_KOD_JE'] = map['JPT_KOD_JE'].apply(lambda x: str(x))
 
     # loading unemployment data
-    data_path = r'\data\interim\unemployment.xlsx'
+    data_path = r'\data\interim\unemployment_202104.xlsx'
     data = pd.read_excel(project_dir + data_path)
 
     # restricting dataframe

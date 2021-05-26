@@ -1,12 +1,12 @@
-# Polish unemployment - municipality map 
+# Polish unemployment - county map 
 A small project which aim is to present on a interactive map polish unemployemnt rate (broken down by county)
 
 ## Interctive map
 http://unemployment-map.herokuapp.com/
 
 ## Data sources
-1. [The Central Statistical Office unemployment data for Feburary 2021](https://stat.gov.pl/obszary-tematyczne/rynek-pracy/bezrobocie-rejestrowane/bezrobotni-zarejestrowani-i-stopa-bezrobocia-stan-w-koncu-marca-2021-r-,2,104.html)
-2. [The Main Office of Geodesy and Cartography regional division of the country into counties (shapefile)](https://www.wroclaw.pl/open-data/dataset/przejazdy-wroclawskiego-roweru-miejskiego-archiwalne)
+1. [The Central Statistical Office unemployment data for April 2021](https://stat.gov.pl/obszary-tematyczne/rynek-pracy/bezrobocie-rejestrowane/bezrobotni-zarejestrowani-i-stopa-bezrobocia-stan-w-koncu-kwietnia-2021-r-,2,105.html)
+2. [The Main Office of Geodesy and Cartography regional division of the country into counties (shapefile)](http://www.gugik.gov.pl/pzgik/dane-bez-oplat/dane-z-panstwowego-rejestru-granic-i-powierzchni-jednostek-podzialow-terytorialnych-kraju-prg)
 
 ## Inspiration articles:
 1. [Folium map tutorial](https://python-visualization.github.io/folium/installing.html)

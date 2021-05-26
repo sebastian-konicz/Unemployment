@@ -14,7 +14,7 @@ def main():
 
     # loading data
     # gettig the file with PNA data
-    data_path = r'\data\raw\stopa_bezrobocia_za_luty_2021.xlsx'
+    data_path = r'\data\raw\stopa_bezrobocia_za_kwiecien_2021.xlsx'
     data = pd.read_excel(project_dir + data_path, sheet_name='Tabl.1a', header=None)
 
     # cleaning loaded data to dataframe format
@@ -42,7 +42,7 @@ def main():
     data['pow_name'] = data['pow_name'].apply(lambda x: str(x).replace('m.', 'miasto ') if str(x).find('m.') != -1 else "powiat " + str(x))
 
     print(data.head(10))
-    data_save_path = r'\data\interim\unemployment.xlsx'
+    data_save_path = r'\data\interim\unemployment_202104.xlsx'
     data.to_excel(project_dir + data_save_path, index=False)
 
     # end time of program + duration
