@@ -44,7 +44,7 @@ def main():
     map_geo = map.to_json()
 
     # creating folium map
-    map_graph = folium.Map([52, 19], zoom_start=6)
+    map_graph = folium.Map([52, 19], zoom_start=7)
 
     folium.Choropleth(geo_data=map_geo,
                       name='choropleth',
